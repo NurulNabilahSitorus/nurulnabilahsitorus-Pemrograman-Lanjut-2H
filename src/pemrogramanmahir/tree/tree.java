@@ -48,8 +48,8 @@ public class tree {
     }
     public void postOrder(node a){
         if(a!=null){
-            inOrder(a.left);
-            inOrder(a.right);
+            postOrder(a.left);
+            postOrder(a.right);
             System.out.print(a.value+" ");
         }
     }
@@ -66,16 +66,18 @@ class node{
     public static void main(String[] args){
         tree tr=new tree();
         node root=new node();
-        int menu=1;
-        int r=1;
+        int menu = 1;
+        int r = 1;
         int a;
         while(menu!=3){
             System.out.print("1.input\n2.view\n3.exit\n : ");
-            menu=tr.in.nextInt();
-            if(menu==1){
+            menu = tr.in.nextInt();
+
+            if(menu == 1){
                 System.out.print("Masukkan Angka : ");
-                a=tr.in.nextInt();
-                if(r==1){
+                a = tr.in.nextInt();
+
+                if(r == 1){
                     root.input(a);
                     r--;
                 }
