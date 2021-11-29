@@ -2,7 +2,9 @@ package pemrogramanmahir.tree;
 import java.util.Scanner;
 
 public class tree {
-    static Scanner in=new Scanner(System.in);
+
+    static Scanner in =new Scanner(System.in);
+
     public void insert(node a, int b){
         if(b<a.value){
             if(a.left!=null) insert(a.left,b);
@@ -24,6 +26,10 @@ public class tree {
     public void view(node a){
         System.out.print("Pre Order  : ");
         preOrder(a);
+        System.out.print("\nIn Order  : ");
+        inOrder(a);
+        System.out.print("\nPost Order  : ");
+        postOrder(a);
         System.out.println(" ");
     }
     public void preOrder(node a){
@@ -33,14 +39,30 @@ public class tree {
             preOrder(a.right);
         }
     }
+    public void inOrder(node a){
+        if(a!=null){
+            inOrder(a.left);
+            System.out.print(a.value+" ");
+            inOrder(a.right);
+        }
+    }
+    public void postOrder(node a){
+        if(a!=null){
+            inOrder(a.left);
+            inOrder(a.right);
+            System.out.print(a.value+" ");
+        }
+    }
 }
 
 class node{
     node left,right;
     int value;
+
     public void input(int a){
         value=a;
     }
+
     public static void main(String[] args){
         tree tr=new tree();
         node root=new node();
