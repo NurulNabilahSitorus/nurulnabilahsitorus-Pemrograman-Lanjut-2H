@@ -7,7 +7,10 @@ public class tree {
 
     public void insert(node a, int b){
         if(b<a.value){
-            if(a.left!=null) insert(a.left,b);
+
+            if(a.left!=null)
+                insert(a.left,b);
+
             else{
                 a.left=new node();
                 a.left.input(b);
@@ -15,7 +18,9 @@ public class tree {
             }
         }
         else if(b>a.value){
-            if(a.right!=null) insert(a.right,b);
+            if(a.right!=null)
+                insert(a.right,b);
+
             else{
                 a.right=new node();
                 a.right.input(b);
@@ -24,7 +29,7 @@ public class tree {
         }
     }
     public void view(node a){
-        System.out.print("Pre Order  : ");
+        System.out.print("\nPre Order  : ");
         preOrder(a);
         System.out.print("\nIn Order  : ");
         inOrder(a);
