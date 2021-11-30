@@ -71,10 +71,12 @@ class node{
         int a;
         while(menu!=3){
             System.out.print("1.input\n2.view\n3.exit\n : ");
+
             menu = tr.in.nextInt();
 
             if(menu == 1){
                 System.out.print("Masukkan Angka : ");
+
                 a = tr.in.nextInt();
 
                 if(r == 1){
