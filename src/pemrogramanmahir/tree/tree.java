@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class tree {
 
-    static Scanner in =new Scanner(System.in);
+    static Scanner in = new Scanner(System.in);
 
     public void insert(node a, int b){
         if(b<a.value){
@@ -83,9 +83,15 @@ class node{
                 }
                 else tr.insert(root,a);
             }
-            else if(menu==2) tr.view(root);
-            else if(menu==3) System.out.println("Keluar");
-            else System.out.println("Salah");
+            else if(menu==2)
+                tr.view(root);
+
+            else if(menu==3)
+                System.out.println("Keluar");
+
+            else
+                System.out.println("Salah");
+
             System.out.println(" ");
         }
     }
